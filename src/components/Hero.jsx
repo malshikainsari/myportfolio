@@ -172,7 +172,7 @@ const Hero = () => {
             }}
           >
             <motion.a
-  href="/documents/Malshika_Insari_CV.pdf"  // Path to your CV in public folder
+  href="\documents\Malshika Insari_Intern_Software Engineer.pdf"  // Path to your CV in public folder
   download="Malshika_Insari_CV.pdf"  // Suggested filename when downloaded
   style={{
     padding: '0.75rem 1.5rem',
