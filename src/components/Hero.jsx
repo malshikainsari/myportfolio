@@ -172,25 +172,25 @@ const Hero = () => {
             }}
           >
             <motion.a
-              href="/path-to-cv.pdf"
-              download
-              style={{
-                padding: '0.75rem 1.5rem',
-                background: 'linear-gradient(to right, #e879f9, #f472b6)',
-                color: '#fff',
-                fontWeight: '500',
-                borderRadius: '0.5rem',
-                textDecoration: 'none',
-                fontSize: '1rem',
-              }}
-              whileHover={{ 
-                scale: 1.05,
-                background: 'linear-gradient(to right, #d946ef, #f472b6)',
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Download CV
-            </motion.a>
+  href="/documents/Malshika_Insari_CV.pdf"  // Path to your CV in public folder
+  download="Malshika_Insari_CV.pdf"  // Suggested filename when downloaded
+  style={{
+    padding: '0.75rem 1.5rem',
+    background: 'linear-gradient(to right, #e879f9, #f472b6)',
+    color: '#fff',
+    fontWeight: '500',
+    borderRadius: '0.5rem',
+    textDecoration: 'none',
+    fontSize: '1rem',
+  }}
+  whileHover={{ 
+    scale: 1.05,
+    background: 'linear-gradient(to right, #d946ef, #f472b6)',
+  }}
+  whileTap={{ scale: 0.95 }}
+>
+  Download CV
+</motion.a>
 
             <motion.a
               href="#contact"
