@@ -35,22 +35,28 @@ const Header = () => {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          {/* Logo */}
+          {/* Logo with unique font style */}
           <motion.a
             href="#home"
             style={{
-              fontSize: '1.5rem',
+              fontSize: '1.8rem',
               fontWeight: 'bold',
               background: 'linear-gradient(to right, #e879f9, #f472b6)',
               WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
+              WebkitTextFillColor: 'transparent',
+              fontFamily: "'Pacifico', cursive, sans-serif", // Unique font
+              letterSpacing: '1px',
+              textShadow: '0 2px 4px rgba(0,0,0,0.2)'
             }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ 
+              scale: 1.05,
+              textShadow: '0 4px 8px rgba(232, 121, 249, 0.3)'
+            }}
           >
             Malshika
           </motion.a>
 
-          {/* Desktop Navigation */}
+          {/* Rest of your header code remains the same... */}
           <nav style={{ display: 'none', gap: '2rem', alignItems: 'center' }} className="md:flex">
             {navItems.map((item, index) => (
               <motion.a
@@ -72,7 +78,6 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Mobile menu button */}
           <button
             style={{
               display: 'flex',
@@ -109,7 +114,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <motion.nav
             initial={{ opacity: 0, height: 0 }}

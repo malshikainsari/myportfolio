@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import beastBuddyImage from "../assets/beastbuddy.png";
+import epicreadsImage from "../assets/epicreads.jpg";
+import orionAiImage from "../assets/orionai.png";
+import LYLUImage from "../assets/lylu.png";
+import luxeloomImage from "../assets/luxeloom.png";
+import silvabarImage from "../assets/desilvabar.png";
+
 
 const projects = [
   {
@@ -9,8 +16,8 @@ const projects = [
     role: "Fullstack Developer",
     tech: "MySQL, PHP, HTML, CSS",
     description: "A global platform addressing animal welfare, providing a user-friendly interface for reporting animal distress and facilitating rescue efforts.",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    github: "https://github.com/HiruniWijerathna/Web-Mini-Project",
+    image: beastBuddyImage, // Remove quotes to use the variable
     details: {
       features: [
         "Animal distress reporting system",
@@ -28,9 +35,9 @@ const projects = [
     role: "Fullstack Developer",
     tech: "MySQL, PHP, HTML, CSS",
     description: "An innovative e-library management system developed to streamline digital library operations with intuitive book management features.",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    details: {
+    github: "https://github.com/HiruniWijerathna/LMS_Group8",
+    image: epicreadsImage,
+     details: {
       features: [
         "Digital book catalog management",
         "User authentication system",
@@ -47,8 +54,8 @@ const projects = [
     role: "Frontend Developer",
     tech: "React.js, Node.js, Express.js, MongoDB",
     description: "An AI skill development platform offering interactive tutorials and challenges across writing, art, music, and programming.",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1677442135136-760c813a743c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    github: "https://github.com/DulSamindika/OrionAi-frontend",
+    image: orionAiImage,
     details: {
       features: [
         "Interactive AI tutorials",
@@ -66,8 +73,8 @@ const projects = [
     role: "Fullstack Developer",
     tech: "React.js, Node.js, Express.js, MongoDB",
     description: "A sustainable second-hand marketplace featuring Google OAuth login, dynamic listings with image uploads, and WhatsApp integration.",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    github: "https://github.com/ZNilakshi/OLY.git",
+    image: LYLUImage,
     details: {
       features: [
         "Google OAuth authentication",
@@ -85,8 +92,8 @@ const projects = [
     role: "Fullstack Developer",
     tech: "React.js, Node.js, Express.js, MongoDB",
     description: "A modern event planning website with AI-powered theme generator, vendor marketplace, and budget tracker with live cost updates.",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    github: "https://github.com/malshikainsari/LuxeLoom-Events",
+    image: luxeloomImage,
     details: {
       features: [
         "AI-powered event theme generator",
@@ -104,8 +111,8 @@ const projects = [
     role: "Fullstack Developer",
     tech: "React.js, Node.js, Express.js, MongoDB",
     description: "Bar website with admin panel for stock management and seamless user experience for purchasing liquor with online payment.",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    github: "https://github.com/ZNilakshi/Capstone-Project",
+    image: silvabarImage ,
     details: {
       features: [
         "Inventory management system",
