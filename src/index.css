@@ -109,3 +109,20 @@ section {
     scroll-snap-align: start;
   }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* Add to index.css */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure all sections are full width */
+section {
+  width: 100%;
+  box-sizing: border-box;
+}

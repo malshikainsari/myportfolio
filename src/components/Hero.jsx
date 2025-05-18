@@ -64,30 +64,35 @@ const Hero = () => {
 
   return (
     <section
-      id="home"
-      style={{
-        width: '100%',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '5rem 2rem 2rem',
-        background: 'linear-gradient(to bottom, #0f172a, #1e293b)',
-        color: '#f8fafc',
-      }}
-    >
-      <div
-        style={{
-          width: '100%',
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1.1fr 1fr',
-          gap: '3rem',
-          alignItems: 'center',
-          padding: '0 2rem 0 3rem',
-        }}
-      >
+  id="home"
+  style={{
+    width: '100%',
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '2rem 1rem', // Reduced padding for mobile
+    background: 'linear-gradient(to bottom, #0f172a, #1e293b)',
+    color: '#f8fafc',
+  }}
+>
+  <div
+    style={{
+      width: '100%',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      display: 'grid',
+      gridTemplateColumns: '1fr', // Single column for mobile
+      gap: '2rem',
+      alignItems: 'center',
+      padding: '0 1rem', // Reduced padding
+      // Add media query for larger screens
+      '@media (min-width: 768px)': {
+        gridTemplateColumns: '1.1fr 1fr',
+        padding: '0 2rem 0 3rem',
+      }
+    }}
+  >
         {/* Left Content */}
         <motion.div
           style={{
@@ -221,40 +226,48 @@ const Hero = () => {
 
         {/* Right Photo */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginLeft: '0', // Remove the large margin
+        '@media (min-width: 768px)': {
+          justifyContent: 'flex-end',
+          marginLeft: '10rem',
+        }
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '300px',
+          aspectRatio: '1/1',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          border: '4px solid #e879f9',
+          boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
+          '@media (max-width: 767px)': {
+            maxWidth: '250px', // Slightly smaller for mobile
+            margin: '0 auto', // Center the image
+          }
+        }}
+      >
+        <img
+          src={profileImage}
+          alt="Malshika"
+          loading="lazy"
           style={{
-            display: 'flex',
-            justifyContent: 'flex-center',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
           }}
-        >
-          <div
-            style={{
-             width: '100%',
-              maxWidth: '300px',
-              aspectRatio: '1/1',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              border: '4px solid #e879f9',
-              boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
-              marginLeft: '10rem', 
-            }}
-          >
-            <img
-              src={profileImage}
-              alt="Malshika"
-              loading="lazy"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-              }}
-            />
-          </div>
-        </motion.div>
+        />
       </div>
-    </section>
+    </motion.div>
+  </div>
+</section>
   );
 };
 
