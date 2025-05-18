@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -39,4 +39,78 @@
 
 .read-the-docs {
   color: #888;
+}
+/* Mobile First Approach */
+@media (max-width: 767px) {
+  /* General layout fixes */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Header/navigation fixes */
+  header {
+    padding: 1rem;
+  }
+  
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Hero section */
+  .hero {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  /* Projects section */
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Tech stack icons */
+  .tech-stack {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tech-stack img {
+    width: 40px;
+    height: 40px;
+    margin: 0.5rem;
+  }
+  
+  /* Contact section */
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-info, .contact-form {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
