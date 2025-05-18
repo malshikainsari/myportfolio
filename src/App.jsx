@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -8,15 +7,23 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div style={{ overflowX: 'hidden' }}>
       <Header />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main>
+        <section id="home" >
+          <Hero />
+        </section>
+        <section id="skills" >
+          <Skills />
+        </section>
+        <section id="projects" >
+          <Projects />
+        </section>
+        <section id="contact" >
+          <Contact />
+        </section>
+      </main>
       <Footer />
-
-      
     </div>
   );
 };

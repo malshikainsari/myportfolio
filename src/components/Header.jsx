@@ -11,6 +11,17 @@ const navItems = [
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleNavigation = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+    setIsOpen(false);
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -35,16 +46,20 @@ const Header = () => {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          {/* Logo with unique font style */}
+          {/* Logo */}
           <motion.a
             href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation("#home");
+            }}
             style={{
               fontSize: '1.8rem',
               fontWeight: 'bold',
               background: 'linear-gradient(to right, #e879f9, #f472b6)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              fontFamily: "'Pacifico', cursive, sans-serif", // Unique font
+              fontFamily: "'Pacifico', cursive, sans-serif",
               letterSpacing: '1px',
               textShadow: '0 2px 4px rgba(0,0,0,0.2)'
             }}
@@ -56,12 +71,16 @@ const Header = () => {
             Malshika
           </motion.a>
 
-          {/* Rest of your header code remains the same... */}
+          {/* Desktop Navigation */}
           <nav style={{ display: 'none', gap: '2rem', alignItems: 'center' }} className="md:flex">
             {navItems.map((item, index) => (
               <motion.a
                 key={index}
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(item.href);
+                }}
                 style={{
                   color: '#e2e8f0',
                   fontWeight: '500',
@@ -78,6 +97,7 @@ const Header = () => {
             ))}
           </nav>
 
+          {/* Mobile Menu Button */}
           <button
             style={{
               display: 'flex',
@@ -114,6 +134,7 @@ const Header = () => {
           </button>
         </div>
 
+        {/* Mobile Navigation */}
         {isOpen && (
           <motion.nav
             initial={{ opacity: 0, height: 0 }}
@@ -130,6 +151,10 @@ const Header = () => {
               <motion.a
                 key={index}
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(item.href);
+                }}
                 style={{
                   display: 'block',
                   padding: '0.5rem 0',
@@ -137,7 +162,6 @@ const Header = () => {
                   fontWeight: '500'
                 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </motion.a>

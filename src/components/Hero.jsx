@@ -11,23 +11,18 @@ const Typewriter = ({ phrases }) => {
   useEffect(() => {
     const handleTyping = () => {
       const currentPhrase = phrases[currentPhraseIndex];
-      
+
       if (isDeleting) {
-        // Deleting text
         setCurrentText(currentPhrase.substring(0, currentText.length - 1));
         setTypingSpeed(75);
       } else {
-        // Typing text
         setCurrentText(currentPhrase.substring(0, currentText.length + 1));
         setTypingSpeed(150);
       }
 
-      // Check if we've finished typing or deleting
       if (!isDeleting && currentText === currentPhrase) {
-        // Pause at end of typing
         setTimeout(() => setIsDeleting(true), 1000);
       } else if (isDeleting && currentText === '') {
-        // Move to next phrase after deleting
         setIsDeleting(false);
         setCurrentPhraseIndex((currentPhraseIndex + 1) % phrases.length);
       }
@@ -68,8 +63,8 @@ const Hero = () => {
   };
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -77,19 +72,21 @@ const Hero = () => {
         justifyContent: 'center',
         padding: '5rem 2rem 2rem',
         background: 'linear-gradient(to bottom, #0f172a, #1e293b)',
-        color: '#f8fafc'
+        color: '#f8fafc',
       }}
     >
-      <div style={{
-        width: '100%',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: '1.1fr 1fr',
-        gap: '3rem',
-        alignItems: 'center',
-        padding: '0 2rem 0 3rem',
-      }}>
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '1.1fr 1fr',
+          gap: '3rem',
+          alignItems: 'center',
+          padding: '0 2rem 0 3rem',
+        }}
+      >
         {/* Left Content */}
         <motion.div
           style={{
@@ -104,11 +101,13 @@ const Hero = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <span style={{
-              fontSize: '1.75rem',
-              fontWeight: '500',
-              color: '#e879f9',
-            }}>
+            <span
+              style={{
+                fontSize: '1.75rem',
+                fontWeight: '500',
+                color: '#e879f9',
+              }}
+            >
               HI,
             </span>
           </motion.div>
@@ -139,11 +138,13 @@ const Hero = () => {
               gap: '0.5rem',
             }}
           >
-            <span style={{
-              background: 'linear-gradient(to right, #e879f9, #f472b6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
+            <span
+              style={{
+                background: 'linear-gradient(to right, #e879f9, #f472b6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
               <Typewriter phrases={["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER"]} />
             </span>
           </motion.h2>
@@ -157,13 +158,13 @@ const Hero = () => {
               margin: '0.5rem 0 1rem',
             }}
           >
-            I specialize in building modern, responsive, and user-friendly web applications. 
-            With a strong focus on both frontend design and backend architecture, I love 
+            I specialize in building modern, responsive, and user-friendly web applications.
+            With a strong focus on both frontend design and backend architecture, I love
             bringing ideas to life through clean, efficient code.
           </motion.p>
 
-          <motion.div 
-            variants={itemVariants} 
+          <motion.div
+            variants={itemVariants}
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -172,25 +173,26 @@ const Hero = () => {
             }}
           >
             <motion.a
-  href="\documents\Malshika Insari_Intern_Software Engineer.pdf"  // Path to your CV in public folder
-  download="Malshika_Insari_CV.pdf"  // Suggested filename when downloaded
-  style={{
-    padding: '0.75rem 1.5rem',
-    background: 'linear-gradient(to right, #e879f9, #f472b6)',
-    color: '#fff',
-    fontWeight: '500',
-    borderRadius: '0.5rem',
-    textDecoration: 'none',
-    fontSize: '1rem',
-  }}
-  whileHover={{ 
-    scale: 1.05,
-    background: 'linear-gradient(to right, #d946ef, #f472b6)',
-  }}
-  whileTap={{ scale: 0.95 }}
->
-  Download CV
-</motion.a>
+              href="/documents/Malshika_Insari_CV.pdf"
+              download="Malshika_Insari_CV.pdf"
+              style={{
+                padding: '0.75rem 1.5rem',
+                background: 'linear-gradient(to right, #e879f9, #f472b6)',
+                color: '#fff',
+                fontWeight: '500',
+                borderRadius: '0.5rem',
+                textDecoration: 'none',
+                fontSize: '1rem',
+              }}
+              aria-label="Download CV"
+              whileHover={{
+                scale: 1.05,
+                background: 'linear-gradient(to right, #d946ef, #f472b6)',
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download CV
+            </motion.a>
 
             <motion.a
               href="#contact"
@@ -203,7 +205,8 @@ const Hero = () => {
                 textDecoration: 'none',
                 fontSize: '1rem',
               }}
-              whileHover={{ 
+              aria-label="Contact Me"
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: '#e879f9',
                 color: 'white',
@@ -222,21 +225,25 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           style={{
             display: 'flex',
-            justifyContent: 'flex-start',
-            marginLeft: '8rem',
+            justifyContent: 'flex-center',
           }}
         >
-          <div style={{
-            width: '300px',
-            height: '300px',
-            borderRadius: '50%',
-            overflow: 'hidden',
-            border: '4px solid #e879f9',
-            boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
-          }}>
-            <img 
+          <div
+            style={{
+             width: '100%',
+              maxWidth: '300px',
+              aspectRatio: '1/1',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '4px solid #e879f9',
+              boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
+              marginLeft: '5rem', 
+            }}
+          >
+            <img
               src={profileImage}
               alt="Malshika"
+              loading="lazy"
               style={{
                 width: '100%',
                 height: '100%',
