@@ -66,6 +66,7 @@ const Hero = () => {
     <section
       id="home"
       style={{
+        width: '100%',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -237,7 +238,7 @@ const Hero = () => {
               overflow: 'hidden',
               border: '4px solid #e879f9',
               boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
-              marginLeft: '5rem', 
+              marginLeft: '10rem', 
             }}
           >
             <img
