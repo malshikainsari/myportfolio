@@ -7,21 +7,13 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div style={{ overflowX: 'hidden' }}>
+    <div className="min-h-screen w-full overflow-x-hidden">
       <Header />
-      <main>
-        <section id="home" >
-          <Hero />
-        </section>
-        <section id="skills" >
-          <Skills />
-        </section>
-        <section id="projects" >
-          <Projects />
-        </section>
-        <section id="contact" >
-          <Contact />
-        </section>
+      <main className="w-full">
+        <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
       <Footer />
     </div>

@@ -64,35 +64,35 @@ const Hero = () => {
 
   return (
     <section
-  id="home"
-  style={{
-    width: '100%',
-    minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '2rem 1rem', // Reduced padding for mobile
-    background: 'linear-gradient(to bottom, #0f172a, #1e293b)',
-    color: '#f8fafc',
-  }}
->
-  <div
-    style={{
-      width: '100%',
-      maxWidth: '1200px',
-      margin: '0 auto',
-      display: 'grid',
-      gridTemplateColumns: '1fr', // Single column for mobile
-      gap: '2rem',
-      alignItems: 'center',
-      padding: '0 1rem', // Reduced padding
-      // Add media query for larger screens
-      '@media (min-width: 768px)': {
-        gridTemplateColumns: '1.1fr 1fr',
-        padding: '0 2rem 0 3rem',
-      }
-    }}
-  >
+      id="home"
+      style={{
+        width: '100%',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '5rem 2rem 2rem',
+        background: 'linear-gradient(to bottom, #0f172a, #1e293b)',
+        color: '#f8fafc',
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '1.1fr 1fr',
+          gap: '3rem',
+          alignItems: 'center',
+          padding: '0 2rem',
+          '@media (max-width: 768px)': {
+            gridTemplateColumns: '1fr',
+            textAlign: 'center',
+            padding: '0 1rem',
+          },
+        }}
+      >
         {/* Left Content */}
         <motion.div
           style={{
@@ -100,7 +100,6 @@ const Hero = () => {
             flexDirection: 'column',
             justifyContent: 'center',
             gap: '1rem',
-            marginLeft: '1rem',
           }}
           variants={containerVariants}
           initial="hidden"
@@ -127,6 +126,12 @@ const Hero = () => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               margin: '0.5rem 0',
+              '@media (max-width: 768px)': {
+                fontSize: '2.5rem',
+              },
+              '@media (max-width: 480px)': {
+                fontSize: '2rem',
+              },
             }}
           >
             I'M MALSHIKA!
@@ -142,6 +147,10 @@ const Hero = () => {
               minHeight: '2.5rem',
               display: 'flex',
               gap: '0.5rem',
+              '@media (max-width: 768px)': {
+                justifyContent: 'center',
+                fontSize: '1.3rem',
+              },
             }}
           >
             <span
@@ -162,6 +171,9 @@ const Hero = () => {
               color: '#94a3b8',
               lineHeight: '1.6',
               margin: '0.5rem 0 1rem',
+              '@media (max-width: 768px)': {
+                fontSize: '1rem',
+              },
             }}
           >
             I specialize in building modern, responsive, and user-friendly web applications.
@@ -176,6 +188,9 @@ const Hero = () => {
               flexWrap: 'wrap',
               gap: '0.75rem',
               marginTop: '0.5rem',
+              '@media (max-width: 768px)': {
+                justifyContent: 'center',
+              },
             }}
           >
             <motion.a
@@ -226,48 +241,50 @@ const Hero = () => {
 
         {/* Right Photo */}
         <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        marginLeft: '0', // Remove the large margin
-        '@media (min-width: 768px)': {
-          justifyContent: 'flex-end',
-          marginLeft: '10rem',
-        }
-      }}
-    >
-      <div
-        style={{
-          width: '100%',
-          maxWidth: '300px',
-          aspectRatio: '1/1',
-          borderRadius: '50%',
-          overflow: 'hidden',
-          border: '4px solid #e879f9',
-          boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
-          '@media (max-width: 767px)': {
-            maxWidth: '250px', // Slightly smaller for mobile
-            margin: '0 auto', // Center the image
-          }
-        }}
-      >
-        <img
-          src={profileImage}
-          alt="Malshika"
-          loading="lazy"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
           style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
+            display: 'flex',
+            justifyContent: 'center',
+            '@media (max-width: 768px)': {
+              order: -1,
+              marginBottom: '2rem',
+            },
           }}
-        />
+        >
+          <div
+            style={{
+              width: '100%',
+              maxWidth: '350px',
+              minWidth: '250px',
+              aspectRatio: '1/1',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '4px solid #e879f9',
+              boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
+              '@media (max-width: 768px)': {
+                maxWidth: '280px',
+              },
+              '@media (max-width: 480px)': {
+                maxWidth: '220px',
+              },
+            }}
+          >
+            <img
+              src={profileImage}
+              alt="Malshika"
+              loading="lazy"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          </div>
+        </motion.div>
       </div>
-    </motion.div>
-  </div>
-</section>
+    </section>
   );
 };
 

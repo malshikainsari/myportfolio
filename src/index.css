@@ -123,6 +123,6 @@ img {
 
 /* Ensure all sections are full width */
 section {
-  width: 100%;
+  width:full;
   box-sizing: border-box;
 }
