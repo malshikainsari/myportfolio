@@ -79,7 +79,6 @@ const Hero = () => {
       <div
         style={{
           width: '100%',
-          maxWidth: '1200px',
           margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: '1.1fr 1fr',
