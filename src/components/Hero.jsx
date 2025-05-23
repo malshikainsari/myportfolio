@@ -35,7 +35,7 @@ const Typewriter = ({ phrases }) => {
   return (
     <span>
       {currentText}
-      <span style={{ opacity: currentText.length === phrases[currentPhraseIndex].length ? 0 : 0.7 }}>|</span>
+      <span className="opacity-0 group-hover:opacity-70">|</span>
     </span>
   );
 };
@@ -63,117 +63,47 @@ const Hero = () => {
   };
 
   return (
-    <section
+    <section 
       id="home"
+      className="w-full min-h-[100vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
       style={{
-        width: '100%',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '5rem 2rem 2rem',
         background: 'linear-gradient(to bottom, #0f172a, #1e293b)',
         color: '#f8fafc',
       }}
     >
-      <div
-        style={{
-          width: '100%',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1.1fr 1fr',
-          gap: '3rem',
-          alignItems: 'center',
-          padding: '0 2rem',
-          '@media (max-width: 768px)': {
-            gridTemplateColumns: '1fr',
-            textAlign: 'center',
-            padding: '0 1rem',
-          },
-        }}
-      >
-        {/* Left Content */}
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Content - appears first on mobile */}
         <motion.div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            gap: '1rem',
-          }}
+          className="flex flex-col justify-center gap-3 text-center  marginLeft-1rem lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <span
-              style={{
-                fontSize: '1.75rem',
-                fontWeight: '500',
-                color: '#e879f9',
-              }}
-            >
+            <span className="text-xl md:text-2xl font-medium text-purple-400">
               HI,
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            style={{
-              fontSize: '3rem',
-              fontWeight: 'bold',
-              background: 'linear-gradient(to right, #e879f9, #f472b6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              margin: '0.5rem 0',
-              '@media (max-width: 768px)': {
-                fontSize: '2.5rem',
-              },
-              '@media (max-width: 480px)': {
-                fontSize: '2rem',
-              },
-            }}
+            className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent my-1"
           >
             I'M MALSHIKA!
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            style={{
-              fontSize: '1.5rem',
-              fontWeight: '600',
-              color: '#94a3b8',
-              margin: '0.5rem 0',
-              minHeight: '2.5rem',
-              display: 'flex',
-              gap: '0.5rem',
-              '@media (max-width: 768px)': {
-                justifyContent: 'center',
-                fontSize: '1.3rem',
-              },
-            }}
+            className="text-lg md:text-xl font-semibold text-slate-400 my-1 min-h-[2rem] flex flex-wrap justify-center lg:justify-start gap-1"
           >
-            <span
-              style={{
-                background: 'linear-gradient(to right, #e879f9, #f472b6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               <Typewriter phrases={["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER"]} />
             </span>
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            style={{
-              fontSize: '1.125rem',
-              color: '#94a3b8',
-              lineHeight: '1.6',
-              margin: '0.5rem 0 1rem',
-              '@media (max-width: 768px)': {
-                fontSize: '1rem',
-              },
-            }}
+            className="text-base md:text-lg text-slate-400 leading-relaxed my-3"
           >
             I specialize in building modern, responsive, and user-friendly web applications.
             With a strong focus on both frontend design and backend architecture, I love
@@ -182,103 +112,67 @@ const Hero = () => {
 
           <motion.div
             variants={itemVariants}
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '0.75rem',
-              marginTop: '0.5rem',
-              '@media (max-width: 768px)': {
-                justifyContent: 'center',
-              },
-            }}
+            className="flex flex-wrap justify-center lg:justify-start gap-3 mt-1"
           >
             <motion.a
-              href="/documents/Malshika_Insari_CV.pdf"
-              download="Malshika_Insari_CV.pdf"
-              style={{
-                padding: '0.75rem 1.5rem',
-                background: 'linear-gradient(to right, #e879f9, #f472b6)',
-                color: '#fff',
-                fontWeight: '500',
-                borderRadius: '0.5rem',
-                textDecoration: 'none',
-                fontSize: '1rem',
-              }}
-              aria-label="Download CV"
-              whileHover={{
-                scale: 1.05,
-                background: 'linear-gradient(to right, #d946ef, #f472b6)',
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Download CV
-            </motion.a>
+  href="/documents/Malshika_Insari_CV.pdf"
+  download="Malshika_Insari_CV.pdf"
+  style={{
+    padding: '0.75rem 1.5rem',
+    background: 'linear-gradient(to right, #e879f9, #f472b6)',
+    color: '#fff',
+    fontWeight: '500',
+    borderRadius: '0.5rem',
+    textDecoration: 'none',
+    fontSize: '1rem',
+  }}
+  aria-label="Download CV"
+  whileHover={{
+    scale: 1.05,
+    background: 'linear-gradient(to right, #d946ef, #f472b6)',
+  }}
+  whileTap={{ scale: 0.95 }}
+>
+  Download CV
+</motion.a>
 
-            <motion.a
-              href="#contact"
-              style={{
-                padding: '0.75rem 1.5rem',
-                border: '2px solid #e879f9',
-                color: '#e879f9',
-                fontWeight: '500',
-                borderRadius: '0.5rem',
-                textDecoration: 'none',
-                fontSize: '1rem',
-              }}
-              aria-label="Contact Me"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: '#e879f9',
-                color: 'white',
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Me
-            </motion.a>
+          <motion.a
+  href="#contact"
+  style={{
+    padding: '0.75rem 1.5rem',
+    border: '2px solid #e879f9',
+    color: '#e879f9',
+    fontWeight: '500',
+    borderRadius: '0.5rem',
+    textDecoration: 'none',
+    fontSize: '1rem',
+  }}
+  aria-label="Contact Me"
+  whileHover={{
+    scale: 1.05,
+    backgroundColor: '#e879f9',
+    color: 'white',
+  }}
+  whileTap={{ scale: 0.95 }}
+>
+  Contact Me
+</motion.a>
           </motion.div>
         </motion.div>
 
-        {/* Right Photo */}
+        {/* Photo - appears second on mobile */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="flex justify-center order-first lg:order-none"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            '@media (max-width: 768px)': {
-              order: -1,
-              marginBottom: '2rem',
-            },
-          }}
         >
-          <div
-            style={{
-              width: '100%',
-              maxWidth: '350px',
-              minWidth: '250px',
-              aspectRatio: '1/1',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              border: '4px solid #e879f9',
-              boxShadow: '0 10px 30px rgba(232, 121, 249, 0.3)',
-              '@media (max-width: 768px)': {
-                maxWidth: '280px',
-              },
-              '@media (max-width: 480px)': {
-                maxWidth: '220px',
-              },
-            }}
-          >
+          <div className="w-full max-w-[280px] sm:max-w-[320px] aspect-square rounded-full overflow-hidden border-3 border-purple-400 shadow-md shadow-purple-500/20">
             <img
               src={profileImage}
               alt="Malshika"
               loading="lazy"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-              }}
+              className="w-full h-full object-cover hover:scale-102 transition-transform duration-300"
             />
           </div>
         </motion.div>
