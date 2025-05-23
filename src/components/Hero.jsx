@@ -115,7 +115,7 @@ const Hero = () => {
             className="flex flex-wrap justify-center lg:justify-start gap-3 mt-1"
           >
             <motion.a
-  href="/documents/Malshika_Insari_CV.pdf"
+  href="/documents/CV_Malshika Insari.pdf"
   download="Malshika_Insari_CV.pdf"
   style={{
     padding: '0.75rem 1.5rem',
